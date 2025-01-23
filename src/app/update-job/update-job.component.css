@@ -1,0 +1,68 @@
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center the card vertically and horizontally */
+  background: linear-gradient(to bottom, #e3f2fd, #bbdefb); /* Add a gradient background */
+}
+
+.example-card {
+  width: 450px; /* Slightly wider card */
+  padding: 24px; /* Increase padding for a spacious look */
+  border: none; /* Remove border for a cleaner design */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow for better elevation */
+  border-radius: 12px; /* Softer rounded corners */
+  background-color: #ffffff; /* Keep a white background */
+}
+
+.header-style {
+  display: flex;
+  justify-content: center; /* Center the header image */
+  margin-bottom: 16px; /* Add spacing below the header */
+}
+
+.header-image {
+  width: 200px; /* Adjust the image size */
+  height: auto;
+  object-fit: contain;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column; /* Stack fields vertically */
+  gap: 20px; /* Increase the gap between form fields */
+}
+
+.full-width {
+  width: 100%; /* Form fields take the full width of the card */
+}
+
+.example-button-row {
+  display: flex;
+  justify-content: space-around; /* Space buttons evenly */
+  margin-top: 20px; /* Add space above buttons */
+}
+
+button[mat-raised-button] {
+  padding: 10px 20px; /* Larger button padding */
+  font-size: 14px; /* Slightly larger font size */
+  border-radius: 8px; /* Add rounded corners to buttons */
+}
+
+button[mat-raised-button]:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow effect on hover */
+}
+
+.home-btn {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
+}

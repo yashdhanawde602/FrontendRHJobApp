@@ -1,0 +1,54 @@
+<div class="header" style="text-align: center; margin-bottom: 20px;">
+  <img src="assets/RippleHire.png" alt="RippleHire Logo" class="logo" style="max-width: 100%; height: auto; max-height: 150px;" />
+</div>
+
+
+<div *ngIf="jobs.length === 0" style="text-align: center; margin-bottom: 20px;">
+  <p>No jobs found!</p>
+</div>
+
+<div class="container">
+
+  <table *ngIf="jobs.length > 0" class="job-table" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+    <thead>
+    <tr style="background-color: #f2f2f2; text-align: left;">
+      <th style="padding: 10px; border: 1px solid #ddd;">Job Id</th>
+      <th style="padding: 10px; border: 1px solid #ddd;">Job Title</th>
+      <th style="padding: 10px; border: 1px solid #ddd;">Job Description</th>
+      <th style="padding: 10px; border: 1px solid #ddd;">Company</th>
+      <th style="padding: 10px; border: 1px solid #ddd;">Job Type</th>
+      <th style="padding: 10px; border: 1px solid #ddd;">Salary</th>
+      <th style="padding: 10px; border: 1px solid #ddd;">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let job of jobs" style="border-bottom: 1px solid #ddd;">
+      <td style="padding: 10px; border: 1px solid #ddd;">{{ job.id }}</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">{{ job.JobTitle }}</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">{{ job.JobDescription }}</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">{{ job.Company }}</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">{{ job.JobType }}</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">{{ job.Salary }}</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">
+        <button
+          (click)="deleteJob(job)"
+          class="delete-btn"
+          style="margin-right: 10px; padding: 5px 10px; background-color: #ff4d4d; border: none; color: white; border-radius: 5px;">
+          Delete
+        </button>
+        <button
+          (click)="updateJob(job.id)"
+          class="update-btn"
+          style="padding: 5px 10px; background-color: #28a745; border: none; color: white; border-radius: 5px;">
+          Update
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+
+

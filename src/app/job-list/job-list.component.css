@@ -1,0 +1,133 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+.job-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.job-table th,
+.job-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.job-table th {
+  background-color: #f2f2f2;
+}
+
+.job-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.job-table td:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+button {
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+}
+
+.update-btn {
+  background-color: #28a745;
+}
+
+.home-btn {
+  background-color: #007bff;
+  padding: 10px 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .header img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .job-table th, .job-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .job-table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .delete-btn, .update-btn, .home-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+
+  .job-table td:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-table td:last-child button {
+    margin-bottom: 10px;
+  }
+
+  .home-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+
+@media only screen and (min-width: 601px) {
+  .container {
+    padding: 0 50px;
+  }
+
+  .job-table th, .job-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .delete-btn, .update-btn, .home-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+

@@ -1,0 +1,10 @@
+.header-image {
+  width: 240px;
+  height: 60px;
+  object-fit: contain;
+  padding-left: 80px;
+  padding-right: 0px;
+  text-align: center;
+
+
+}

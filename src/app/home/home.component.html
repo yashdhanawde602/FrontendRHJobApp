@@ -1,0 +1,118 @@
+<form #jobForm="ngForm" (ngSubmit)="saveJob(jobForm)" novalidate>
+  <head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job App</title></head>
+
+  <div class="center-container">
+    <mat-card class="example-card">
+      <mat-card-header class="header-style">
+        <a href="https://www.ripplehire.com/">
+          <img mat-card-avatar src="assets/RippleHire.png" alt="Ripple Logo" class="header-image" />
+        </a>
+      </mat-card-header>
+
+      <div class="example-container">
+
+
+        <mat-form-field appearance="outline" class="full-width">
+          <input
+            matInput
+            placeholder="Enter Job Title"
+            name="JobTitle"
+            [(ngModel)]="job.JobTitle"
+            required
+            pattern="^[a-zA-Z0 ]*$"
+            #jobTitle="ngModel"
+          />
+          <mat-error *ngIf="jobTitle.errors?.['required']">
+            Job Title is required.
+          </mat-error>
+          <mat-error *ngIf="jobTitle.errors?.['pattern']">
+            No special characters & numbers allowed.
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="full-width">
+          <textarea
+            matInput
+            placeholder="Enter Job Description"
+            name="JobDescription"
+            [(ngModel)]="job.JobDescription"
+            required
+            [maxLength]="50"
+            #jobDescription="ngModel"
+
+          ></textarea>
+          <mat-error *ngIf="jobDescription.errors?.['required']">
+            Job Description is required.
+          </mat-error>
+
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="full-width">
+          <input
+            matInput
+            placeholder="Enter Company"
+            name="Company"
+            [(ngModel)]="job.Company"
+            required
+            pattern="^[a-zA-Z0 ]*$"
+            #company="ngModel"
+          />
+          <mat-error *ngIf="company.errors?.['required']">
+            Company name is required.
+          </mat-error>
+          <mat-error *ngIf="company.errors?.['pattern']">
+            No special characters & Numbers allowed.
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-select
+            placeholder="Select Job Type"
+            name="JobType"
+            [(ngModel)]="job.JobType"
+            required
+            #jobType="ngModel"
+          >
+            <mat-option value="WFH">WFH</mat-option>
+            <mat-option value="Full Time">Full Time</mat-option>
+            <mat-option value="Part Time">Part Time</mat-option>
+          </mat-select>
+          <mat-error *ngIf="jobType.errors?.['required']">
+            Job Type is required.
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="full-width">
+          <input
+            matInput
+            placeholder="Enter Salary"
+            name="Salary"
+            [(ngModel)]="job.Salary"
+            required
+            pattern="^[0-9]*$"
+            #salary="ngModel"
+          />
+          <mat-error *ngIf="salary.errors?.['required']">
+            Salary is required.
+          </mat-error>
+          <mat-error *ngIf="salary.errors?.['pattern']">
+            Only numbers are allowed.
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="example-button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="jobForm.invalid">ADD</button>&nbsp;&nbsp;
+        <button mat-raised-button color="warn" type="button" (click)="jobForm.resetForm()">CANCEL</button>&nbsp;&nbsp;
+        <button routerLink="/job-list" mat-raised-button color="primary" type="button">JOBS</button>
+      </div>
+    </mat-card>
+  </div>
+
+</form>
