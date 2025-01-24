@@ -43,6 +43,7 @@ export class JobListComponent implements OnInit {
   }
 
 
+<<<<<<< HEAD
   deleteJob(job: Job) {
     const confirmation = confirm('Do you really want to delete this job?');
 
@@ -61,6 +62,9 @@ export class JobListComponent implements OnInit {
       console.log('Job deletion canceled by the user.');
     }
   }
+=======
+
+>>>>>>> bac1188 (First commit for backend)
 
 
 
@@ -73,4 +77,70 @@ export class JobListComponent implements OnInit {
     this.location.back();
   }
 
+<<<<<<< HEAD
+=======
+  deleteJob(job: any) {
+    const toastRef = this.toastr.warning(
+      'Do you really want to delete this job?',
+      'Confirm Deletion',
+      {
+        closeButton: true,
+        tapToDismiss: false,
+        positionClass: 'toast-top-center',
+        disableTimeOut: true,
+        enableHtml: true,
+      }
+
+    );
+
+
+    const toastElement = document.querySelector('.toast-warning') as HTMLElement;
+    if (toastElement) {
+
+      const yesButton = document.createElement('button');
+      yesButton.innerText = 'Yes';
+      yesButton.className = 'btn btn-success btn-sm';
+      yesButton.style.marginRight = '10px';
+      yesButton.addEventListener('click', () => {
+
+
+        this.proceedWithDelete(job);
+
+      });
+
+
+
+      const noButton = document.createElement('button');
+      noButton.innerText = 'No';
+      noButton.className = 'btn btn-danger btn-sm';
+      noButton.addEventListener('click', () => {
+
+        this.toastr.info('Job deletion canceled.', 'Canceled');
+
+      }
+      ) ;
+
+
+      toastElement.appendChild(yesButton);
+      toastElement.appendChild(noButton);
+
+    }
+  }
+
+  proceedWithDelete(job: any) {
+    const deleteUrl = `${this.apiUrl}/deletejob`;
+    this.http.delete(deleteUrl, { body: job }).subscribe({
+      next: () => {
+        this.jobs = this.jobs.filter((j) => j.id !== job.id);
+        this.toastr.success('Job deleted successfully', 'Success');
+      },
+      error: (err) => {
+        console.error('Error deleting job:', err);
+        this.toastr.error('Failed to delete job.', 'Error');
+      },
+    });
+  }
+
+
+>>>>>>> bac1188 (First commit for backend)
 }

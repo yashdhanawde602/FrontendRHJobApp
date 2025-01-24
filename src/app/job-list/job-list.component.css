@@ -130,4 +130,23 @@ button {
     font-size: 14px;
   }
 }
+<<<<<<< HEAD
+=======
+.btn {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+>>>>>>> bac1188 (First commit for backend)
 
