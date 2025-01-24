@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-
+//hii
 @Component({
   selector: 'app-job-list',
   imports: [CommonModule, HttpClientModule, ],
