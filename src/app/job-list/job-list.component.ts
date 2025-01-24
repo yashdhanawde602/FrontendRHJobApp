@@ -43,28 +43,9 @@ export class JobListComponent implements OnInit {
   }
 
 
-<<<<<<< HEAD
-  deleteJob(job: Job) {
-    const confirmation = confirm('Do you really want to delete this job?');
 
-    if (confirmation) {
-      const deleteUrl = `${this.apiUrl}/deletejob`;
-      this.http.delete(deleteUrl, { body: job }).subscribe({
-        next: () => {
-          this.jobs = this.jobs.filter(j => j.id !== job.id);
-          console.log('Job deleted successfully');
-          this.toastr.success('Job Deleted successfully', 'Success');
 
-        },
-        error: (err) => console.error('Error deleting job:', err),
-      });
-    } else {
-      console.log('Job deletion canceled by the user.');
-    }
-  }
-=======
 
->>>>>>> bac1188 (First commit for backend)
 
 
 
@@ -77,8 +58,8 @@ export class JobListComponent implements OnInit {
     this.location.back();
   }
 
-<<<<<<< HEAD
-=======
+
+
   deleteJob(job: any) {
     const toastRef = this.toastr.warning(
       'Do you really want to delete this job?',
@@ -142,5 +123,5 @@ export class JobListComponent implements OnInit {
   }
 
 
->>>>>>> bac1188 (First commit for backend)
+
 }
